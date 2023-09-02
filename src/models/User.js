@@ -1,4 +1,4 @@
-import {Schema, model} from 'mongoose';
+import {model, Schema} from 'mongoose';
 import bcrypt from 'bcryptjs';
 
 const userSchema = new Schema({
@@ -12,6 +12,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    fotoPerfilURL: {
+        type: String,
+        default: 'https://ladygeeky.com/wp-content/uploads/2022/11/gazelle.jpeg'
+    }
 }, {
     timestamps: true,
     versionKey: false

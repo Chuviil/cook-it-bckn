@@ -1,9 +1,9 @@
 import Recipe from "../models/Recipe";
 
 export const createRecipe = async (req, res) => {
-    const {imagenURL, nombre, cantidadPorciones, tiempo, descripcion, ingredientes, pasos} = req.body;
+    const {nombre, cantidadPorciones, tiempo, descripcion, ingredientes, pasos} = req.body;
     const newRecipe = new Recipe(
-        {imagenURL, nombre, cantidadPorciones, tiempo, descripcion, ingredientes, pasos}
+        {nombre, cantidadPorciones, tiempo, descripcion, ingredientes, pasos}
     );
     const savedRecipe = await newRecipe.save();
     res.status(201).json(savedRecipe);
