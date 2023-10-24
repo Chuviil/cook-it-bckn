@@ -15,11 +15,7 @@ export const login = async (req, res) => {
         expiresIn: 2419200 //2 Semanas
     })
 
-    res.json({
-        token,
-        nombre: foundUser.nombre,
-        fotoPerfilURL: foundUser.fotoPerfilURL
-    })
+    res.json({token});
 }
 
 export const register = async (req, res) => {
@@ -37,9 +33,5 @@ export const register = async (req, res) => {
         expiresIn: 2419200 //2 Semanas
     })
 
-    res.status(201).json({
-        token,
-        nombre: savedUser.nombre,
-        fotoPerfilURL: savedUser.fotoPerfilURL
-    })
+    res.status(201).json({token});
 }

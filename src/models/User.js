@@ -15,7 +15,19 @@ const userSchema = new Schema({
     fotoPerfilURL: {
         type: String,
         default: 'https://ladygeeky.com/wp-content/uploads/2022/11/gazelle.jpeg'
-    }
+    },
+    recetasPublicadas: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Recipe'
+    }],
+    recetasGuardadas: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Recipe'
+    }],
+    alacena: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Ingredient'
+    }]
 }, {
     timestamps: true,
     versionKey: false

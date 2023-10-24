@@ -9,7 +9,14 @@ const recipeScheme = new Schema({
     cantidadPorciones: Number,
     tiempo: Number,
     descripcion: String,
-    ingredientes: [String],
+    ingredientes: [{
+        ingrediente: {
+            type: Schema.Types.ObjectId,
+            ref: 'Ingredient'
+        },
+        cantidad: Number,
+        unidad: String
+    }],
     pasos: [String],
     vecesSeguidas: {
         type: Number,
