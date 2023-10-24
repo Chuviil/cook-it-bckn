@@ -2,8 +2,16 @@ import express from 'express';
 import morgan from "morgan";
 import pkg from '../package.json';
 import {authRoutes, recipesRoutes, userRoutes, ingredientRoutes} from './routes';
+import cors from "cors";
 
 const app = express();
+
+const corsOptions = {
+    origin: "https://www.chuvblocks.com",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+}
+
+app.use(cors(corsOptions));
 
 app.set('pkg', pkg);
 
