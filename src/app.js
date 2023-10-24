@@ -7,7 +7,7 @@ import cors from "cors";
 const app = express();
 
 const corsOptions = {
-    origin: "https://www.chuvblocks.com",
+    origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 }
 
