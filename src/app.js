@@ -3,8 +3,11 @@ import morgan from "morgan";
 import pkg from '../package.json';
 import {authRoutes, recipesRoutes, userRoutes, ingredientRoutes} from './routes';
 import cors from "cors";
+import {createIngredients} from "./libs/initialSetup";
 
 const app = express();
+
+createIngredients();
 
 const corsOptions = {
     origin: "*",

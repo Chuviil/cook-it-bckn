@@ -9,3 +9,8 @@ export const getSavedRecipes = async (req, res) => {
     const user = await User.findById(req.userId).populate('recetasGuardadas');
     res.status(201).json(user.recetasGuardadas);
 }
+
+export const getPostedRecipes = async (req, res) => {
+    const user = await User.findById(req.userId).populate('recetasPublicadas');
+    res.status(201).json(user.recetasPublicadas);
+}

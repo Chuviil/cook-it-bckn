@@ -15,7 +15,7 @@ export const getRecipes = async (req, res) => {
 }
 
 export const getRecipeById = async (req, res) => {
-    const recipe = await Recipe.findById(req.params.recipeId);
+    const recipe = await Recipe.findById(req.params.recipeId).populate('ingredientes.ingrediente');
     res.json(recipe);
 }
 
