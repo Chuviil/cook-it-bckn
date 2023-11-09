@@ -4,6 +4,7 @@ import pkg from '../package.json';
 import {authRoutes, recipesRoutes, userRoutes, ingredientRoutes} from './routes';
 import cors from "cors";
 import {createIngredients} from "./libs/initialSetup";
+import bodyParser from "body-parser";
 
 const app = express();
 
@@ -18,7 +19,9 @@ app.use(cors(corsOptions));
 
 app.set('pkg', pkg);
 
-app.use(express.json());
+// app.use(express.json());
+
+app.use(bodyParser.json({limit: '20mb'}));
 
 app.use(morgan('dev'));
 
